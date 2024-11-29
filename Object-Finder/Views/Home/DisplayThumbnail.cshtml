@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Thumbnail Preview";
+}
+
+<h2>Thumbnail Preview</h2>
+
+@if (ViewData["Error"] != null)
+{
+    <div class="alert alert-danger">@ViewData["Error"]</div>
+}
+else if (ViewData["Thumbnail"] != null)
+{
+    <div>
+        <p>Here is the generated thumbnail:</p>
+        <img src="@ViewData["Thumbnail"]" alt="Generated Thumbnail" class="img-thumbnail" />
+    </div>
+}
+else
+{
+    <p>No thumbnail available.</p>
+}
+<div>
+    <a href="/Home/GenerateThumbnail" type="submit" class="btn btn-primary">Generate Another Thumbnail</a>
+    <a href="/Home/AnalyzeImage" class="btn btn-secondary"><--Back</a>
+</div>

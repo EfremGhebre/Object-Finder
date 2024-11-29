@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Generate Thumbnail";
+}
+
+<h2>Generate Thumbnail</h2>
+
+@if (ViewData["Error"] != null)
+{
+    <div class="alert alert-danger">@ViewData["Error"]</div>
+}
+
+<form method="get" action="/Home/DisplayThumbnail">
+    <div class="mb-3">
+        <label for="imageUrl" class="form-label">Image URL:</label>
+        <input type="url" name="imageUrl" id="imageUrl" class="form-control" required placeholder="https://example.com/image.jpg" />
+    </div>
+    <div class="mb-3">
+        <label for="width" class="form-label">Width:</label>
+        <input type="number" name="width" id="width" class="form-control" value="100" min="50" />
+    </div>
+    <div class="mb-3">
+        <label for="height" class="form-label">Height:</label>
+        <input type="number" name="height" id="height" class="form-control" value="100" min="50" />
+    </div>
+    <button type="submit" class="btn btn-primary">Generate Thumbnail</button>
+    <a href="/Home/AnalyzeImage" class="btn btn-secondary"><--Back</a>
+</form>

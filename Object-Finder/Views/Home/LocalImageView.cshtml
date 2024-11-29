@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Analyze Local Image";
+}
+
+<h2>Analyze Local Image</h2>
+
+@if (ViewData["Error"] != null)
+{
+    <div class="alert alert-danger">@ViewData["Error"]</div>
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="imageFile" class="form-label">Upload an Image:</label>
+        <input type="file" name="imageFile" id="imageFile" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Analyze</button>
+    <a href="/Home/AnalyzeImage" class="btn btn-secondary"><--Back</a>
+</form>

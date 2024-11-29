@@ -1,0 +1,22 @@
+﻿@model List<(string Tag, double Confidence)>
+
+
+@{
+    ViewData["Title"] = "Analyze Image URL";
+}
+
+<h2>Analyze Image URL</h2>
+
+@if (ViewData["Error"] != null)
+{
+    <div class="alert alert-danger">@ViewData["Error"]</div>
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label for="imageUrl" class="form-label">Enter Image URL:</label>
+        <input type="url" name="imageUrl" id="imageUrl" class="form-control" placeholder="https://example.com/image.jpg" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Analyze</button>
+    <a href="/Home/AnalyzeImage" class="btn btn-secondary"><--Back</a>
+</form>
